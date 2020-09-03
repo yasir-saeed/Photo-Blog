@@ -1,0 +1,20 @@
+<h4 class ='d-flex justify-content-between mb-5'>
+  <span>Posts</span>
+  <%= link_to 'New Image', new_image_path, class: 'btn btn-primary' %>
+</h4>
+
+
+<% @images.each do |image| %>
+    <%= link_to image_path(image), class: 'text-decoration-none' do %>
+    <div class="card mb-4 border-dark">
+      <div class="card-body">
+        <h5 class='card-title text-dark'><%= image.title %></h5>
+       <%= image_tag(image.photo, style:'width:50%') if image.photo.attached? %>
+
+
+
+        
+      </div>
+    </div>
+<% end %>
+<% end %>

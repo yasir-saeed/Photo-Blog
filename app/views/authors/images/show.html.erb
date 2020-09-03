@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @image.title %>
+</p>
+
+<div style="width:400px; height:auto">
+<%= image_tag(@image.photo, style: 'width:100%') if @image.photo.attached? %>
+</div>
+
+<p>
+  <strong>Published:</strong>
+  <%= @image.published %>
+</p>
+
+<p>
+  <strong>Published at:</strong>
+  <%= @image.published_at %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @image.author_id %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
