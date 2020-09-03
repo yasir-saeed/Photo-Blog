@@ -6,7 +6,7 @@
 </p>
 
 <div style="width:400px; height:auto">
-<%= image_tag(@image.photo, style: 'width:100%') if @image.photo.attached? %>
+<%= image_tag(@image.photo, style: 'width:100%')if @image.photo.attached? %>
 </div>
 
 <p>
@@ -25,4 +25,5 @@
 </p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<%= link_to 'Back', images_path %> |
+

@@ -25,7 +25,7 @@ class ImagesController < AuthorsController
     @image = current_author.images.build(image_params)
 
     if @image.save
-      redirect_to @image, notice: 'Image was successfully created.'
+      redirect_to @image
     else
       render :new
     end
@@ -34,7 +34,7 @@ class ImagesController < AuthorsController
   # PATCH/PUT /images/1
   def update
     if @image.update(image_params)
-      redirect_to @image, notice: 'Image was successfully updated.'
+      redirect_to @image
     else
       render :edit
     end
