@@ -31,6 +31,7 @@ class ImagesController < AuthorsController
     end
   end
 
+
   # PATCH/PUT /images/1
   def update
     if @image.update(image_params)
@@ -46,16 +47,11 @@ class ImagesController < AuthorsController
     redirect_to images_url, notice: 'Image was successfully destroyed.'
   end
 
-  def username
-    return self.email.split('@')[0].capitalize
-  end
-
-  
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image
-      @image = current_author.images.find(params[:id])
+      @image = Image.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
