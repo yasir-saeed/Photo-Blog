@@ -50,6 +50,7 @@ class ImagesController < AuthorsController
     return self.email.split('@')[0].capitalize
   end
 
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -59,7 +60,8 @@ class ImagesController < AuthorsController
 
     # Only allow a trusted parameter "white list" through.
     def image_params
-      params.require(:image).permit(:title, :photo, :published)
+      params.require(:image).permit(:title, :photo, :published, :published_post)
       end
+    end
   end
-end
+

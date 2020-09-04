@@ -1,47 +1,43 @@
+
+
 <p id="notice"><%= notice %></p>
+<%= link_to 'Back', images_path, class: "btn btn-primary pb-2" %> 
 
 
-<%= link_to 'Back', images_path, class: "btn btn-primary mb-2" %> 
-
+<body class ="pt-2">
 <div class="row col-md-12">
-<div class="card border-dark">
-<div class="card-header border-dark">
-<p class="text-center mb-9">
-  <strong>Title:</strong>
-  <%= @image.title %>
-</p>
 
-<p>
-  <strong>Author:</strong>
-  <%= current_author.username %>
-</p>
+   <div class="card border-dark">
+      <div class="card-header border-dark text-center">
+         <p class="text-center mb-9">
+         <h1><%= @image.title %></h1>
+         </p>
+         <p>
+            <strong>Author:</strong>
+            <%= current_author.username %>
+         </p>
+      </div>
+     
+
+        <div class="card-body text-center">
+         <div style="width:450px; height:450px">
+            <%= image_tag(@image.photo, style: 'width:100%')if @image.photo.attached? %>
+         </div>
+       </div>
+
+         <li class="list-group-item">
+            <p>
+               <strong>Published:</strong>
+               <% if @image.published? %>
+               <a>Yes</a>
+               <% else %>
+               <a>No</a>
+               <% end %>
+            </p>
+            <%= link_to 'Edit', edit_image_path(@image), class: "btn btn-success mb-2" %> 
+        </div>
+    </div>
+    </li>
+  </div>
 </div>
-<div class="card-body">
-<div style="width:400px; height:400px">
-<%= image_tag(@image.photo, style: 'width:88%')if @image.photo.attached? %>
-</div>
-
-<p>
-  <strong>Published:</strong>
-  <% if @image.published? %>
-  		<a>Yes</a>
-  <% else %>
-  		<a>No</a>
-  <% end %>
-</p>
-
-<p>
-  <% if @image.published? %>
-  <strong>Published at:</strong>
-  <%= @image.published_at %>
-  <% else %>
-  <% end %>
-</p>
-
-
-
-
-<%= link_to 'Edit', edit_image_path(@image), class: "btn btn-primary" %> 
-</div>
-</div>
-</div>
+</body>

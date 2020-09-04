@@ -1,14 +1,15 @@
-<h4 class ='d-flex justify-content-between mb-5'>
-  <%= current_author.username+"'s Posts" %>
-  <%= link_to 'New Image', new_image_path, class: 'btn btn-primary' %>
-</h4>
+
+<%= link_to 'New Image', new_image_path, class: 'btn btn-primary float-right' %>
+
+  <h1><%= current_author.username+"'s Posts" %></h1>
+  
 
 
 <% @images.each do |image| %>
     <%= link_to image_path(image), class: 'text-decoration-none' do %>
     <div class="card mb-4 border-dark">
       <div class="card-body">
-        <h1 class='card-title align-text-top text-dark'><%= image.title %></h1>
+        <h2 class='card-title align-text-top text-dark'><%= image.title %></h2>
 
 
        <%= image_tag(image.photo, style:'width:50%') if image.photo.attached? %>
