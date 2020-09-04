@@ -1,5 +1,5 @@
 <h4 class ='d-flex justify-content-between mb-5'>
-  <span>Posts</span>
+  <%= current_author.username+"'s Posts" %>
   <%= link_to 'New Image', new_image_path, class: 'btn btn-primary' %>
 </h4>
 
@@ -8,13 +8,24 @@
     <%= link_to image_path(image), class: 'text-decoration-none' do %>
     <div class="card mb-4 border-dark">
       <div class="card-body">
-        <h5 class='card-title text-dark'><%= image.title %></h5>
+        <h1 class='card-title align-text-top text-dark'><%= image.title %></h1>
+
 
        <%= image_tag(image.photo, style:'width:50%') if image.photo.attached? %>
-   
       </div>
+
+      <li class="list-group-item">
+      	 
+   	   <% if image.published? %>
+  		<a><b>Published:</b> Yes </a>
+  <% else %>
+  		<a><b>Published:</b> No</a>
+  <% end %>
+  <%= link_to 'Edit', edit_image_path(image), class: "btn btn-primary float-right" %> 
+   	    </li>
     </div>
 <% end %>
+
 <% end %>
 
 
