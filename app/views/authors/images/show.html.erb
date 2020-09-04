@@ -1,29 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<%= link_to 'Back', images_path, class: "btn btn-primary mb-2" %> 
+
+<div class="row col-md-12">
+<div class="card border-dark">
+<div class="card-header border-dark">
+<p class="text-center mb-9">
   <strong>Title:</strong>
   <%= @image.title %>
 </p>
 
-<div style="width:400px; height:auto">
-<%= image_tag(@image.photo, style: 'width:100%')if @image.photo.attached? %>
+<p>
+  <strong>Author:</strong>
+  <%= current_author.username %>
+</p>
+</div>
+<div class="card-body">
+<div style="width:400px; height:400px">
+<%= image_tag(@image.photo, style: 'width:88%')if @image.photo.attached? %>
 </div>
 
 <p>
   <strong>Published:</strong>
-  <%= @image.published %>
+  <% if @image.published? %>
+  		<a>Yes</a>
+  <% else %>
+  		<a>No</a>
+  <% end %>
 </p>
 
 <p>
+  <% if @image.published? %>
   <strong>Published at:</strong>
   <%= @image.published_at %>
+  <% else %>
+  <% end %>
 </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @image.author_id %>
-</p>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %> |
 
+
+<%= link_to 'Edit', edit_image_path(@image), class: "btn btn-primary" %> 
+</div>
+</div>
+</div>

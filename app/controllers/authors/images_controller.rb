@@ -46,6 +46,11 @@ class ImagesController < AuthorsController
     redirect_to images_url, notice: 'Image was successfully destroyed.'
   end
 
+  def username
+    return self.email.split('@')[0].capitalize
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image

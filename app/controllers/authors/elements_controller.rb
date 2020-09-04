@@ -46,6 +46,12 @@ class ElementsController < AuthorsController
     redirect_to elements_url, notice: 'Element was successfully destroyed.'
   end
 
+
+  def test
+    @author = author.find(@image.id)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_element
