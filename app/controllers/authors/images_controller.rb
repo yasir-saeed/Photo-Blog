@@ -16,6 +16,8 @@ class ImagesController < AuthorsController
     @image = current_author.images.build
   end
 
+  
+
   # GET /images/1/edit
   def edit
   end
@@ -46,6 +48,10 @@ class ImagesController < AuthorsController
     @image.destroy
     redirect_to images_url, notice: 'Image was successfully destroyed.'
   end
+
+  
+  
+  
 
 
   private

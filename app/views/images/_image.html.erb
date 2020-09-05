@@ -1,0 +1,17 @@
+
+<%= link_to image_path(image), class: 'text-decoration-none' do %>
+<% if image.published? %>
+  <div class="card mb-4 border-dark">
+  <div class="card-body">
+    <h2 class='card-title align-text-top text-dark'><%= image.title %></h2>
+
+
+       <%= image_tag(image.photo, style:'width:50%') if image.photo.attached? %>
+      </div>
+
+      <li class="list-group-item">
+        <%= "Author: "+image.author.username %>
+      </li>
+    </div>
+<% end %>
+<% end %>

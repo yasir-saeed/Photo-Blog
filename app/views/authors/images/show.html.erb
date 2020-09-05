@@ -2,15 +2,11 @@
 
 <p id="notice"><%= notice %></p>
 
-<% if current_author.images.include?(@image) %>
-<%= link_to 'Back', images_path, class: "btn btn-primary mb-4" %>
-<% else %>
-<%= link_to 'Back', root_path, class: "btn btn-primary mb-4" %> 
-<% end %>
+<%= link_to 'Back', :back, class: "btn btn-primary mb-4" %>
 
 
 <body>
-<div class="row col-md-12 tp-2">
+<div class="row col-md-12 tp-2 pb-4">
 
    <div class="card border-dark">
       <div class="card-header border-dark text-center">
@@ -48,3 +44,4 @@
   </div>
 </div>
 </body>
+

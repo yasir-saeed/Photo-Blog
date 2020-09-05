@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Shopify</title>
+    <title>ImageRepo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -29,10 +29,12 @@
       
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Image Title" aria-label="Search">
+
+    <form class="form-inline my-2 my-lg-0" action="/search">
+      <input class="form-control mr-sm-2" name="q" type="search" placeholder="Image Title" aria-label="Search">
       <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+
     <button class="btn btn-success ml-4"href="/login">Login</button>
   </div>
 </nav>

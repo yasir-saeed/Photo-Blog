@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
 root to: "public/home#index"
 
+get'search', to: "public#search"
+
+
 scope module: 'authors' do
 	resources :images 
 	end
