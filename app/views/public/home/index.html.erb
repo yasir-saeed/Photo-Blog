@@ -1,18 +1,16 @@
 <h1>All Posts</h1>
 
 <% @image.each do |image| %>
-    <%= link_to image_path(image), class: 'text-decoration-none' do %>
-    <div class="card mb-4 border-dark">
-      <div class="card-body">
-        <h2 class='card-title align-text-top text-dark'><%= image.title %></h2>
+<%= link_to image_path(image), class: 'text-decoration-none' do %>
+<div class="card mb-4 border-dark">
+   <div class="card-body">
+      <h2 class='card-title align-text-top text-dark'><%= image.title %></h2>
+      <%= image_tag(image.photo, style:'width:50%') if image.photo.attached? %>
+   </div>
+   <li class="list-group-item">
+      <%= "Author: "+image.author.username %>
+   </li>
+</div>
 
-
-       <%= image_tag(image.photo, style:'width:50%') if image.photo.attached? %>
-      </div>
-
-      <li class="list-group-item">
-        <%= "Author: "+image.author.username %>
-      </li>
-    </div>
 <% end %>
 <% end %>

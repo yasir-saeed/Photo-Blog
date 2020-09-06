@@ -16,8 +16,6 @@ class ImagesController < AuthorsController
     @image = current_author.images.build
   end
 
-  
-
   # GET /images/1/edit
   def edit
   end
@@ -32,7 +30,6 @@ class ImagesController < AuthorsController
       render :new
     end
   end
-
 
   # PATCH/PUT /images/1
   def update
