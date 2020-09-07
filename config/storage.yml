@@ -8,10 +8,10 @@ local:
 
 amazon:
   service: S3
-  access_key_id:  ENV['AKIAVZH4SBSY4KAJPSCE'] 
-  secret_access_key:  ENV['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'] 
-  region:  ENV['us-east-1']
-  bucket:  ENV['bucketeer-96376a38-a62d-45f1-bc08-9ab47789bd76'] 
+  access_key_id: AKIAVZH4SBSY4KAJPSCE
+  secret_access_key:  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
+  region:  us-east-1
+  bucket:  bucketeer-96376a38-a62d-45f1-bc08-9ab47789bd76 
 
 
 
