@@ -2,7 +2,7 @@ class PublicController < ApplicationController
 	layout 'public'
 
 def search
-    @public = Image.where("title LIKE ?", "%" + params[:q] + "%" + "COLLATE utf8_general_ci")
+    @public = Image.where("LOWER(title) LIKE ?", "%" + params[:q].downcase + "%")
   end
 
 def about
