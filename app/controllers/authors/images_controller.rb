@@ -20,6 +20,7 @@ class ImagesController < AuthorsController
   def edit
   end
 
+
   # POST /images
   def create
     @image = current_author.images.build(image_params)
@@ -46,7 +47,6 @@ class ImagesController < AuthorsController
     redirect_to images_url, notice: 'Image was successfully destroyed.'
   end
 
-  
   
   
 

@@ -21,7 +21,7 @@
      
 
         <div class="card-body text-center">
-         <div style="width:450px; height:450px">
+         <div style="width:450px; height:500px">
             <%= image_tag(@image.photo, style: 'width:100%')if @image.photo.attached? %>
          </div>
        </div>
@@ -35,8 +35,10 @@
                <a>No</a>
                <% end %>
             </p>
-            <% if current_author.images.include?(@image) %>
-            <%= link_to 'Edit', edit_image_path(@image), class: "btn btn-success mb-2" %> 
+            <% if current_author.images.include?(@image) || (current_author.admin) %>
+
+            <%= link_to 'Edit', edit_image_path(@image), class: "btn btn-success mb-2" %>
+
             <% end %>
         </div>
     </div>

@@ -9,8 +9,9 @@ root to: "public/home#index"
 
 get'search', to: "public#search"
 
+get '/about' => 'public#about'
 
 scope module: 'authors' do
-	resources :images 
+	resources :images
 	end
 end

@@ -1,27 +1,41 @@
-
 <%= link_to 'Back', :back, class: 'btn btn-primary mb-4' %>
-
-
-
+<% if current_author.images.include?(@image) || (current_author.admin) %>
 <div class="row col-md-6 ">
-	<div class="card border-dark ">
-		<div class="card-body">
-			<h4 class='card-title'>Editing Image</h4>
+   <div class="card border-dark ">
+      <div class="card-body">
+         <h4 class='card-title'>Editing Image</h4>
 
-<%= render 'form', image: @image %>
+         <%= render 'form', image: @image %>
+         <%= form_for(@image) do |f| %>
+         <% if @image.published? %>
+         <%= f.hidden_field :published, value: "0" %>
+         <%= f.submit  "Unpublish", class: "btn btn-danger btn-block" %>
 
-<%= form_for(@image) do |f| %>
-	<% if @image.published? %>
-		<%= f.hidden_field :published, value: "0" %>
-		<%= f.submit  "Unpublish", class: "btn btn-danger btn-block" %>
-	<% else %>
-		<%= f.hidden_field :published, value: "1" %>
-	    <%= f.submit "Publish", class: "btn btn-success btn-block" %>
-	<% end %> 
-	<% end %>   
+         <% else %>
+         <%= f.hidden_field :published, value: "1" %>
+         <%= f.submit "Publish", class: "btn btn-success btn-block" %>
+         	<% end %> 
+         <% end %>
+         <%= link_to 'Delete', @image, method: :delete, data: { confirm: 'Are you sure you want to delete this image?'}, class: "btn btn-danger mt-4 float-right" %> 
+
+         <%= link_to 'Image Details', @image, class: "btn btn-success mt-4" %> 
+      </div>
+   </div>
+</div>
+<% else %>
+	<div class="card w-50">
+   <div class="card border-dark">
+      <div class="card-header ">
+      	<div class="text-center">
+         <h4>Cannot edit image</h4>
+     		</div>    
+     
+            
+         </ul>
+      </div>
+   </div>
+ </div>  
 
 
-<%= link_to 'Image Details', @image %> 
-			</div>
-		</div>
-	</div>
+
+<% end %>

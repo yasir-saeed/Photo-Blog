@@ -1,3 +1,14 @@
+/*
+ *= require font-awesome
+ */
+
+
 body { 
     padding-top: 20px; 
+}
+
+
+a {
+    color: #0060B6;
+    text-decoration: none;
 }
