@@ -1,6 +1,6 @@
 # README
 
-This project is my solution to <a href="https://docs.google.com/document/d/1ZKRywXQLZWOqVOHC4JkF3LqdpO3Llpfk_CkZPR8bjak/edit" target="_blank"> Shopify's Winter 2021 Backend Coding Challenge for an internship position</a>
+This project is my solution to <a href="https://docs.google.com/document/d/1ZKRywXQLZWOqVOHC4JkF3LqdpO3Llpfk_CkZPR8bjak/edit" target="_blank"> Shopify's Winter 2021 Backend Intern Coding Challenge</a>
 
 The Image Repository was built with Ruby on Rails, and utilizes postgresql and Amazon S3 for data and image storage.
 
