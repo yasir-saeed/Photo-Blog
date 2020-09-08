@@ -18,5 +18,9 @@ Users can search for published images based on its title, regardless of whether 
 
 ## Adding Images
 
-To create an image, simply login or signup and upload an image. Images are private by default, and can be published for anyone to see by clicking the Publish button on the edit page. Users can only edit, publish or delete posts made by themselves. However, if an admin finds a post that they deem inappropriate, they can edit, unpublish or delete the post.
+To create an image, simply login or signup and upload an image. Images are private by default, and can be published for anyone to see by clicking the Publish button on the edit page. Users can edit and change the title or image attached to their post.
+
+## Deleting Images
+
+Users can permanently delete images from the repository. They can only edit or delete images created by themselves. If an Admin finds a post that they deem inappropriate, they can edit, delete or unpublish the post.
 
