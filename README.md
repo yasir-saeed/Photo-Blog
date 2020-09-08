@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is my solution to <a href="https://docs.google.com/document/d/1ZKRywXQLZWOqVOHC4JkF3LqdpO3Llpfk_CkZPR8bjak/edit" target="_blank"> Shopify's Winter 2021 Backend Coding Challenge for an internship position</a>
 
-Things you may want to cover:
+The Image Repository was built with Ruby on Rails, and utilizes postgresql and Amazon S3 for data and image storage.
 
-* Ruby version
+Devise and ActiveStorage are also used for user control and file storage.
 
-* System dependencies
+# Solution
 
-* Configuration
+Heroku App: https://shopify-backend-winter-2021.herokuapp.com/
 
-* Database creation
+# Features
 
-* Database initialization
+## Search Function
 
-* How to run the test suite
+Users can search for published images based on its title, regardless of whether they are logged in or not.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Adding Images
 
-* Deployment instructions
+To create an image, simply login or signup and upload an image. Images are private by default, and can be published for anyone to see by clicking the Publish button on the edit page. Users can only edit, publish or delete posts made by themselves. However, if an admin finds a post that they deem inappropriate, they can edit, unpublish or delete the post.
 
-* ...
